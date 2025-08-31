@@ -1,0 +1,9 @@
+<div class="container">
+  <app-loading *ngIf="loading"></app-loading>
+  <select #genreSelect class="form-select" (change)="selectGenre(genreSelect.value)">
+    <option value="">All Genre</option>
+    <option *ngFor="let genre of genres" [value]="genre.id">
+      {{ genre.name }}
+    </option>
+  </select>
+</div>

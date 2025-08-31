@@ -1,0 +1,23 @@
+<div class="page-wrapper">
+  <!-- Search -->
+  <div class="search-bar">
+    <app-serach (serachResult)="handleSearchResults($event)"></app-serach>
+  </div>
+
+  <!-- Genres -->
+  <div class="genre-bar">
+    <app-genres (moviesByGenre)="loadMoviesByGenre($event)"></app-genres>
+  </div>
+
+  <!-- Movies Grid -->
+  <app-movie-card
+    [movies]="filteredMovies.length ? filteredMovies : movies"
+    (movieClick)="goToDetails($event)">
+  </app-movie-card>
+
+  <!-- Pagination -->
+  <div class="pagination-bar">
+    <button class="btn-custom" (click)="prevPage()">Previous</button>
+    <button class="btn-custom" (click)="nextPage()">Next</button>
+  </div>
+</div>

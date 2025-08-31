@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center align-item-center my-5">
+  <div class="input-group w-50">
+    <app-loading [loading]="isLoading"> </app-loading>
+    <input
+      type="text"
+      placeholder="Search for a movie, TV show, person..."
+      [(ngModel)]="searchText"
+      class="form-control form-control-lg"
+    />
+     <button
+      class="btn btn-danger btn-lg"
+      (click)="search()">Search</button>
+  </div>
+</div>

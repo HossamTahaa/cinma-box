@@ -1,0 +1,21 @@
+<div class="movies-grid" *ngIf="movies?.length">
+  <div class="movie-card" *ngFor="let movie of movies" (click)="onCardClick(movie.id)">
+    <div class="poster-wrapper">
+      <img class="movie-poster"
+        [src]="movie.poster_path ? ('https://image.tmdb.org/t/p/w500' + movie.poster_path) : 'https://via.placeholder.com/500x750?text=No+Image'"
+        [alt]="movie.title || movie.name" />
+
+       <button class="favorite-icon"
+        [class.active]="isFavorite(movie)"
+        (click)="toggleFavorite(movie); $event.stopPropagation()">
+        <span *ngIf="isFavorite(movie)">❤️</span>
+        <span *ngIf="!isFavorite(movie)">🤍</span>
+      </button>
+    </div>
+      <div class="movie-body">
+        <h5 class="movie-title" [title]="movie.title || movie.name">
+          {{ movie.title || movie.name }}
+        </h5>
+      </div>
+  </div>
+</div>

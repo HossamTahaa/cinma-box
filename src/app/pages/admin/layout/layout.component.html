@@ -1,0 +1,18 @@
+<div class="layout">
+  <header class="header">
+    <h2>🎬 Cinema Box </h2>
+  </header>
+
+  <div class="content">
+    <aside class="sidebar">
+      <ul>
+        <li><a routerLink="/admin/movies" (click)="goToMovieList()">Movies</a></li>
+         <li><a routerLink="/admin/fac" (click)="goToFavPage()"> Favorites</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
